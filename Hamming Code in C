@@ -1,5 +1,7 @@
 #include<stdio.h>
 #include<math.h>
+#include<time.h>
+#include<stdlib.h>
 int main()
 {
 	int n,j,k,i=0,sum =0,maxparity = 10;
@@ -13,7 +15,7 @@ int main()
 		scanf("%d",&s[i]);
 	}
 	int MsgBit = (int)(sizeof(s)/sizeof(s[0]));
-	// printf("then massege type bits are %d\n",MsgBit);
+	// printf("then massege type bits is %d\n",MsgBit);
 	for(i=0;i<=10;i++)
     {
 		t1=MsgBit+i+1;
@@ -27,7 +29,7 @@ int main()
 	lebel : printf("number of Parity Bits is :%d \n",t3);
 	int t4 = t3 + MsgBit;
     printf("Number of Hamming code is : %d\n",t4);
-	//char Array[t4];
+	// char Array[t4];
     for(i=0,j=0;i<n;i++)
     {
         for(k=0;k<maxparity;k++)
@@ -80,10 +82,20 @@ int main()
         printf("%d ",temp[i]);
     }
         printf("\nHamming code From Receiver : ");
-    for(i=0;i<t4;i++)
-    {
-        scanf("%d",&temp2[i]);
+    for(i=0;i<t4;i++){
+        temp2[i]=temp[i]; 
     }
+    int count =1;
+    srand(time(NULL));
+    int t5 =rand()%t4;
+    if(temp2[t5]==0){
+        temp2[t5]=1;
+    }
+    printf("After Error Generating Hamming code will be : ");
+    for(i=0;i<t4;i++){
+        printf("%d ",temp2[i]);
+    }
+    printf("\n");
     int b[t3];
     int m=t3-1;
     sum=0;
