@@ -87,7 +87,7 @@ int main()
     }
     int count =1;
     srand(time(NULL));
-    int t5 =rand()%t4;
+    int t5 =rand()%t4+1;
     if(temp2[t5]==0){
         temp2[t5]=1;
     }
