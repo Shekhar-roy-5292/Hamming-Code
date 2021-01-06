@@ -13,7 +13,7 @@ int main()
 		scanf("%d",&s[i]);
 	}
 	int MsgBit = (int)(sizeof(s)/sizeof(s[0]));
-	// printf("then massege type bits is %d\n",MsgBit);
+	// printf("then massege type bits are %d\n",MsgBit);
 	for(i=0;i<=10;i++)
     {
 		t1=MsgBit+i+1;
@@ -27,7 +27,7 @@ int main()
 	lebel : printf("number of Parity Bits is :%d \n",t3);
 	int t4 = t3 + MsgBit;
     printf("Number of Hamming code is : %d\n",t4);
-	// char Array[t4];
+	char Array[t4];
     for(i=0,j=0;i<n;i++)
     {
         for(k=0;k<maxparity;k++)
