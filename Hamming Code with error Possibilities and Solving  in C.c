@@ -59,7 +59,7 @@ int main()
         }
         temp[t]=sum%2;
         sum=0;
-        printf("At Position r%d: %d\n",t,temp[t]);
+        printf("At Position r%d: %d\n",t+1,temp[t]);
     }
     printf("\nHamming code From Sender :   ");
     for(i=0;i<t4;i++)
@@ -111,7 +111,7 @@ int main()
         }
         b[m]=sum%2;
         sum=0;
-        printf("At Position r%d: %d\n",t,b[m]);
+        printf("At Position r%d: %d\n",t+1,b[m]);
         m--;
     }
     int position = 0;
@@ -121,8 +121,7 @@ int main()
     }
 	if(position != 0){
     printf("Position of Error: %d\n",position);
-}
-    if(temp2[position-1]==0)
+        if(temp2[position-1]==0)
         temp2[position-1]=1;
     else
         temp2[position-1]=0;
@@ -131,7 +130,12 @@ int main()
     for(i=0;i<t4;i++)
     {
         printf("%d ",temp2[i]);
-    }
+    	}
+	}
+	else{
+		printf("\nNo Error ");
+	}
+
 }
 	printf("Enter only binary numbers :");
 	for(i=0;i<n;i++)
