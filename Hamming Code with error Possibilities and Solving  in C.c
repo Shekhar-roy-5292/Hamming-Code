@@ -59,7 +59,7 @@ int main()
         }
         temp[t]=sum%2;
         sum=0;
-        printf("At Position %d: %d\n",t+1,temp[t]);
+        printf("At Position r%d: %d\n",t,temp[t]);
     }
     printf("\nHamming code From Sender :   ");
     for(i=0;i<t4;i++)
@@ -76,7 +76,7 @@ int main()
     if(temp2[t5]==0){
         temp2[t5]=1;
     }
-    printf("After Error Generating Hamming code will be : ");
+    printf(" Hamming code will be : ");
     for(i=0;i<t4;i++){
         printf("%d ",temp2[i]);
     }
@@ -111,19 +111,21 @@ int main()
         }
         b[m]=sum%2;
         sum=0;
-        printf("At Position %d: %d\n",t+1,b[m]);
+        printf("At Position r%d: %d\n",t,b[m]);
         m--;
     }
-    int POS = 0;
+    int position = 0;
      for(m=0;m<t3;m++)
     {
-        POS=POS+b[t3-m-1]*pow(2,m);
+        position=position+b[t3-m-1]*pow(2,m);
     }
-    printf("Position of Error: %d\n",POS);
-    if(temp2[POS-1]==0)
-        temp2[POS-1]=1;
+	if(position != 0){
+    printf("Position of Error: %d\n",position);
+}
+    if(temp2[position-1]==0)
+        temp2[position-1]=1;
     else
-        temp2[POS-1]=0;
+        temp2[position-1]=0;
 
     printf("\nError Correction complete :  ");
     for(i=0;i<t4;i++)
