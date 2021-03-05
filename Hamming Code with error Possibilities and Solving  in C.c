@@ -8,13 +8,14 @@ int main()
 	int n,j,k,i=0,sum =0,maxparity = 10;
 	printf("Enter the no of elements : ");
 	scanf("%d",&n);
-	printf("%d\n",n);
+//	printf("%d\n",n);
 	int s[n],temp[100],temp2[100],t,t1,t2,t3,MsgBit;
 	void Op(){
 	printf("number of Parity Bits is :%d \n",t3);
 	int t4 = t3 + MsgBit;
     printf("Number of Hamming code is : %d\n",t4);
 	// char Array[t4];
+	printf("The Generated codeword is : ");
     for(i=0,j=0;i<n;i++)
     {
         for(k=0;k<maxparity;k++)
@@ -61,12 +62,12 @@ int main()
         sum=0;
         printf("At Position r%d: %d\n",t+1,temp[t]);
     }
-    printf("\nHamming code From Sender :   ");
+    printf("\nSending :   ");
     for(i=0;i<t4;i++)
     {
         printf("%d ",temp[i]);
     }
-        printf("\nHamming code From Receiver : ");
+        printf("\nReceived  : ");
     for(i=0;i<t4;i++){
         temp2[i]=temp[i]; 
     }
@@ -76,7 +77,7 @@ int main()
     if(temp2[t5]==0){
         temp2[t5]=1;
     }
-    printf(" Hamming code will be : ");
+//    printf(" Hamming code will be : ");
     for(i=0;i<t4;i++){
         printf("%d ",temp2[i]);
     }
@@ -133,7 +134,7 @@ int main()
     	}
 	}
 	else{
-		printf("\nNo Error ");
+		printf("\nThere is no Error ");
 	}
 
 }
@@ -156,3 +157,4 @@ int main()
 	}
 	return 0;
 }
+
